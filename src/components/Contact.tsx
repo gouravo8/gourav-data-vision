@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { Phone, Mail, Linkedin, Github, Send, MapPin } from 'lucide-react';
+import { Phone, Mail, Linkedin, Github, Send, MapPin, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -11,9 +12,10 @@ const Contact = () => {
     email: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Simple form validation
@@ -26,14 +28,39 @@ const Contact = () => {
       return;
     }
 
-    // Simulate form submission
-    toast({
-      title: "Message sent successfully!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
+    setIsSubmitting(true);
 
-    // Reset form
-    setFormData({ name: '', email: '', message: '' });
+    try {
+      // Send email using EmailJS
+      await emailjs.send(
+        'service_akfpg6u', // Service ID
+        'template_cpnvzls', // Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_name: 'Gourav', // Your name
+        },
+        '4H45987s6JRKFdRbI' // Public Key
+      );
+
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for reaching out. I'll get back to you within 24 hours.",
+      });
+
+      // Reset form
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      toast({
+        title: "Failed to send message",
+        description: "There was an error sending your message. Please try again or contact me directly.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -113,7 +140,8 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Your full name"
-                    className="w-full border-border/50 focus:border-primary focus:ring-primary/20 bg-background/50 backdrop-blur-sm transition-all duration-300 hover:border-primary/50"
+                    disabled={isSubmitting}
+                    className="w-full border-border/50 focus:border-primary focus:ring-primary/20 bg-background/50 backdrop-blur-sm transition-all duration-300 hover:border-primary/50 disabled:opacity-50"
                   />
                 </div>
 
@@ -128,7 +156,8 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="your.email@example.com"
-                    className="w-full border-border/50 focus:border-primary focus:ring-primary/20 bg-background/50 backdrop-blur-sm transition-all duration-300 hover:border-primary/50"
+                    disabled={isSubmitting}
+                    className="w-full border-border/50 focus:border-primary focus:ring-primary/20 bg-background/50 backdrop-blur-sm transition-all duration-300 hover:border-primary/50 disabled:opacity-50"
                   />
                 </div>
 
@@ -143,16 +172,27 @@ const Contact = () => {
                     onChange={handleChange}
                     placeholder="Tell me about your project or how I can help..."
                     rows={5}
-                    className="w-full border-border/50 focus:border-primary focus:ring-primary/20 resize-none bg-background/50 backdrop-blur-sm transition-all duration-300 hover:border-primary/50"
+                    disabled={isSubmitting}
+                    className="w-full border-border/50 focus:border-primary focus:ring-primary/20 resize-none bg-background/50 backdrop-blur-sm transition-all duration-300 hover:border-primary/50 disabled:opacity-50"
                   />
                 </div>
 
                 <Button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-primary to-accent-purple hover:from-primary-hover hover:to-accent-purple text-white font-semibold py-4 rounded-xl shadow-xl hover-lift border-0 text-lg"
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-to-r from-primary to-accent-purple hover:from-primary-hover hover:to-accent-purple text-white font-semibold py-4 rounded-xl shadow-xl hover-lift border-0 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <Send size={20} className="mr-2" />
-                  Send Message
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 size={20} className="mr-2 animate-spin" />
+                      Sending Message...
+                    </>
+                  ) : (
+                    <>
+                      <Send size={20} className="mr-2" />
+                      Send Message
+                    </>
+                  )}
                 </Button>
               </form>
 
