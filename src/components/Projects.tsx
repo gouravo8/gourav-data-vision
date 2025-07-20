@@ -9,7 +9,8 @@ const Projects = () => {
       tools: ['Python', 'Web Scraping', 'Matplotlib', 'Pandas'],
       icon: TrendingUp,
       category: 'Financial Analysis',
-      highlights: ['Automated Data Collection', 'Real-time Tracking', 'Interactive Charts']
+      highlights: ['Automated Data Collection', 'Real-time Tracking', 'Interactive Charts'],
+      githubUrl: 'https://github.com/gouravsinghbais/Bombay-Stock-Exchange-Analysis'
     },
     {
       title: 'Salary Prediction ML Model',
@@ -17,7 +18,8 @@ const Projects = () => {
       tools: ['Python', 'Scikit-learn', 'AWS SageMaker', 'Machine Learning'],
       icon: DollarSign,
       category: 'Machine Learning',
-      highlights: ['AWS Deployment', 'Predictive Analytics', '85% Accuracy']
+      highlights: ['AWS Deployment', 'Predictive Analytics', '85% Accuracy'],
+      githubUrl: 'https://github.com/gouravsinghbais/Salary-Prediction-ML-Model'
     },
     {
       title: 'Workforce Performance Dashboard',
@@ -25,7 +27,8 @@ const Projects = () => {
       tools: ['Power BI', 'SQL', 'HR Analytics', 'DAX'],
       icon: BarChart3,
       category: 'Business Intelligence',
-      highlights: ['Interactive Dashboard', 'KPI Tracking', 'HR Insights']
+      highlights: ['Interactive Dashboard', 'KPI Tracking', 'HR Insights'],
+      githubUrl: 'https://github.com/gouravsinghbais/Workforce-Performance-Dashboard'
     },
     {
       title: 'Adidas Sales Dashboard',
@@ -33,7 +36,8 @@ const Projects = () => {
       tools: ['Power BI', 'Excel', 'Data Modeling', 'SQL'],
       icon: TrendingUp,
       category: 'Sales Analytics',
-      highlights: ['Sales Forecasting', 'Regional Analysis', 'Product Performance']
+      highlights: ['Sales Forecasting', 'Regional Analysis', 'Product Performance'],
+      githubUrl: 'https://github.com/gouravsinghbais/Adidas-Sales-Dashboard'
     },
     {
       title: 'Investor Data Analysis',
@@ -41,7 +45,8 @@ const Projects = () => {
       tools: ['SQL', 'Python', 'Portfolio Analysis', 'Financial Modeling'],
       icon: Database,
       category: 'Financial Analytics',
-      highlights: ['Portfolio Optimization', 'Risk Analysis', 'Performance Metrics']
+      highlights: ['Portfolio Optimization', 'Risk Analysis', 'Performance Metrics'],
+      githubUrl: 'https://github.com/gouravsinghbais/Investor-Data-Analysis'
     },
     {
       title: 'CropCareConnect Platform',
@@ -49,7 +54,8 @@ const Projects = () => {
       tools: ['Django', 'Python', 'Tailwind CSS', 'Agriculture Analytics'],
       icon: Leaf,
       category: 'Web Development',
-      highlights: ['Full-stack Development', 'Agricultural Insights', 'Responsive Design']
+      highlights: ['Full-stack Development', 'Agricultural Insights', 'Responsive Design'],
+      githubUrl: 'https://github.com/gouravsinghbais/CropCareConnect-Platform'
     }
   ];
 
@@ -129,6 +135,7 @@ const Projects = () => {
                     variant="outline"
                     size="sm"
                     className="flex-1 text-xs border-primary/20 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                    onClick={() => window.open(project.githubUrl, '_blank')}
                   >
                     <ExternalLink size={14} className="mr-1" />
                     View Details
@@ -137,6 +144,7 @@ const Projects = () => {
                     variant="outline"
                     size="sm"
                     className="flex-1 text-xs border-accent-purple/20 hover:bg-accent-purple hover:text-white transition-all duration-300"
+                    onClick={() => window.open(project.githubUrl, '_blank')}
                   >
                     <Github size={14} className="mr-1" />
                     Code
