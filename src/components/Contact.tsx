@@ -223,16 +223,28 @@ const Contact = () => {
                     <a
                       key={index}
                       href={info.href}
-                      className="flex items-center gap-4 p-4 rounded-xl hover:bg-gradient-to-r hover:from-primary/10 hover:to-transparent transition-all duration-300 group border border-transparent hover:border-primary/20"
+                      className={`flex items-center gap-4 p-4 rounded-xl transition-all duration-300 group border border-transparent ${
+                        info.label === 'LinkedIn' || info.label === 'GitHub'
+                          ? 'hover:bg-gradient-to-r hover:from-primary/20 hover:to-accent-purple/10 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/20'
+                          : 'hover:bg-gradient-to-r hover:from-primary/10 hover:to-transparent hover:border-primary/20'
+                      }`}
                     >
-                      <div className="w-14 h-14 bg-gradient-to-br from-primary to-accent-purple rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                        <Icon className="text-white" size={22} />
+                      <div className={`w-14 h-14 bg-gradient-to-br from-primary to-accent-purple rounded-xl flex items-center justify-center transition-all duration-300 shadow-lg ${
+                        info.label === 'LinkedIn' || info.label === 'GitHub'
+                          ? 'group-hover:scale-125 group-hover:shadow-2xl group-hover:shadow-primary/40 group-hover:animate-pulse group-hover:border-2 group-hover:border-primary/30'
+                          : 'group-hover:scale-110'
+                      }`}>
+                        <Icon className={`text-white transition-all duration-300 ${
+                          info.label === 'LinkedIn' || info.label === 'GitHub'
+                            ? 'group-hover:scale-110 group-hover:drop-shadow-lg'
+                            : ''
+                        }`} size={22} />
                       </div>
                       <div className="flex-1">
                         <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors text-lg">
                           {info.label}
                         </h4>
-                        <p className="text-muted-foreground">{info.value}</p>
+                        <p className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">{info.value}</p>
                       </div>
                       <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <div className="w-2 h-2 bg-primary rounded-full"></div>
