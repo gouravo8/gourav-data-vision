@@ -223,6 +223,8 @@ const Contact = () => {
                     <a
                       key={index}
                       href={info.href}
+                      target={info.label === 'LinkedIn' || info.label === 'GitHub' ? '_blank' : undefined}
+                      rel={info.label === 'LinkedIn' || info.label === 'GitHub' ? 'noopener noreferrer' : undefined}
                       className={`flex items-center gap-4 p-4 rounded-xl transition-all duration-300 group border border-transparent ${
                         info.label === 'LinkedIn' || info.label === 'GitHub'
                           ? 'hover:bg-gradient-to-r hover:from-primary/20 hover:to-accent-purple/10 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/20'

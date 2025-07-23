@@ -40,6 +40,8 @@ const Footer = () => {
                 <a
                   key={social.label}
                   href={social.href}
+                  target={social.label === 'LinkedIn' || social.label === 'GitHub' ? '_blank' : undefined}
+                  rel={social.label === 'LinkedIn' || social.label === 'GitHub' ? 'noopener noreferrer' : undefined}
                   className={`w-10 h-10 bg-gradient-to-br from-primary/20 to-accent-purple/20 backdrop-blur-sm border border-background/20 rounded-lg flex items-center justify-center transition-all duration-300 ${
                     social.label === 'LinkedIn' || social.label === 'GitHub'
                       ? 'hover:scale-125 hover:bg-gradient-to-br hover:from-primary/40 hover:to-accent-purple/40 hover:shadow-xl hover:shadow-primary/30 hover:border-primary/40 hover:animate-pulse'
