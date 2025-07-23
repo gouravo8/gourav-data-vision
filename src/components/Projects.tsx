@@ -10,7 +10,7 @@ const Projects = () => {
       icon: TrendingUp,
       category: 'Financial Analysis',
       highlights: ['Automated Data Collection', 'Real-time Tracking', 'Interactive Charts'],
-      githubUrl: 'https://github.com/gouravsinghbais/Bombay-Stock-Exchange-Analysis'
+      githubUrl: 'https://github.com/gouravo8'
     },
     {
       title: 'Salary Prediction ML Model',
@@ -19,7 +19,7 @@ const Projects = () => {
       icon: DollarSign,
       category: 'Machine Learning',
       highlights: ['AWS Deployment', 'Predictive Analytics', '85% Accuracy'],
-      githubUrl: 'https://github.com/gouravsinghbais/Salary-Prediction-ML-Model'
+      githubUrl: 'https://github.com/gouravo8'
     },
     {
       title: 'Workforce Performance Dashboard',
@@ -28,7 +28,7 @@ const Projects = () => {
       icon: BarChart3,
       category: 'Business Intelligence',
       highlights: ['Interactive Dashboard', 'KPI Tracking', 'HR Insights'],
-      githubUrl: 'https://github.com/gouravsinghbais/Workforce-Performance-Dashboard'
+      githubUrl: 'https://github.com/gouravo8'
     },
     {
       title: 'Adidas Sales Dashboard',
@@ -37,7 +37,7 @@ const Projects = () => {
       icon: TrendingUp,
       category: 'Sales Analytics',
       highlights: ['Sales Forecasting', 'Regional Analysis', 'Product Performance'],
-      githubUrl: 'https://github.com/gouravsinghbais/Adidas-Sales-Dashboard'
+      githubUrl: 'https://github.com/gouravo8'
     },
     {
       title: 'Investor Data Analysis',
@@ -46,7 +46,7 @@ const Projects = () => {
       icon: Database,
       category: 'Financial Analytics',
       highlights: ['Portfolio Optimization', 'Risk Analysis', 'Performance Metrics'],
-      githubUrl: 'https://github.com/gouravsinghbais/Investor-Data-Analysis'
+      githubUrl: 'https://github.com/gouravo8'
     },
     {
       title: 'CropCareConnect Platform',
@@ -55,7 +55,7 @@ const Projects = () => {
       icon: Leaf,
       category: 'Web Development',
       highlights: ['Full-stack Development', 'Agricultural Insights', 'Responsive Design'],
-      githubUrl: 'https://github.com/gouravsinghbais/CropCareConnect-Platform'
+      githubUrl: 'https://github.com/gouravo8'
     }
   ];
 
