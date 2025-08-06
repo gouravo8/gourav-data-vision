@@ -20,7 +20,7 @@ const Resume = () => {
               className="group bg-gradient-to-r from-primary to-accent-purple hover:from-primary/90 hover:to-accent-purple/90 text-white shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <a 
-                href="https://tiiny.host/use-case/resume-link/" 
+                href="https://drive.google.com/uc?export=download&id=1CLDUCU0Mv3eA3OobdWZwL0lYO5uwTT95" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-3"
@@ -37,13 +37,13 @@ const Resume = () => {
               className="group border-primary/30 hover:border-primary/50 hover:bg-primary/5"
             >
               <a 
-                href="https://tiiny.host/use-case/resume-link/" 
+                href="https://drive.google.com/file/d/1CLDUCU0Mv3eA3OobdWZwL0lYO5uwTT95/view?usp=sharing" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-3"
               >
                 <FileText className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                View CV
+                View Resume
               </a>
             </Button>
           </div>
