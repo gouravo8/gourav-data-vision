@@ -87,7 +87,7 @@ const Contact = () => {
       icon: Linkedin,
       label: 'LinkedIn',
       value: 'Connect with me',
-      href: 'https://www.linkedin.com/in/gourav-rajput-b2748222'
+      href: 'https://www.linkedin.com/in/gouravr367'
     },
     {
       icon: Github,
