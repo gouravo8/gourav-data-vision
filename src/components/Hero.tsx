@@ -33,7 +33,7 @@ const Hero = () => {
           </div>
 
           {/* Floating Info Cards */}
-          <div className="absolute left-8 top-1/3 hidden lg:block animate-fade-in" style={{ animationDelay: '0.5s' }}>
+          <div className="absolute left-8 top-1/4 hidden lg:block animate-fade-in" style={{ animationDelay: '0.5s' }}>
             <div className="card-professional p-4 max-w-xs">
               <div className="text-sm text-muted-foreground">Current Focus</div>
               <div className="font-semibold text-primary">Data Analytics</div>

@@ -81,9 +81,12 @@ const Services = () => {
 
                 {/* Hover effect indicator */}
                 <div className="mt-6 pt-4 border-t border-border/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-sm text-primary font-medium">
+                  <a 
+                    href="mailto:Gouravr367@gmail.com?subject=Project Discussion Inquiry from Portfolio"
+                    className="text-sm text-primary font-medium hover:text-primary/80 transition-colors cursor-pointer"
+                  >
                     Let's discuss your project →
-                  </span>
+                  </a>
                 </div>
               </div>
             );
